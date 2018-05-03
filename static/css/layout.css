@@ -1,0 +1,80 @@
+.forimg {
+    width: 100px;
+    height: 30px;
+    background: blue;
+    vertical-align: center
+}
+
+.forimg img {
+    width: 100%;
+    height: 100%;
+}
+
+.mycontent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 0 !important;
+}
+
+.login {
+    width: 374px;
+    height: 320px;
+    margin: 0px auto;
+    background: #f0f0f0;
+    font-size: 12px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #368;
+    line-height: 20px;
+}
+
+.loginContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+}
+
+.loginContent input {
+    width: 80%;
+    height: 34px;
+    border: 1px solid #bbb;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    outline: 0;
+    text-indent: 1rem;
+    background: #efefef;
+}
+
+.loginContent input[type='submit'] {
+    text-indent: 0;
+    background: #1e67d0;
+    color: #fff;
+    cursor: pointer;
+}
+.validreg{
+    width: 80%;
+    height: 34px;
+    background: #efefef;
+    line-height: 34px;
+    text-align: center;
+}

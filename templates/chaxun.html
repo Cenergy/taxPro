@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>查询面板</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <link rel="stylesheet" href="/static/css/global.css">
+    <style>
+        .layui-nav .layui-this:after,
+        .layui-nav-bar,
+        .layui-nav-tree .layui-nav-itemed:after {
+            background-color: blue;
+        }
+
+        .layui-tab-brief>.layui-tab-more li.layui-this:after,
+        .layui-tab-brief>.layui-tab-title .layui-this:after {
+            border-bottom: 1px solid blue;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mycontent {
+            height: auto;
+            min-height: 80%;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        .footer {
+            height: 20%;
+            min-height: 140px;
+            background: #373d42;
+        }
+
+        .myfooter {
+            position: relative;
+            height: 120px;
+            /*line-height尽量不要超过height高度*/
+            line-height: 110px;
+            margin-top: -120px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+        .layui-header {
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body class="layui-layout-body" style="margin-top: 0px">
+    <div class="layui-layout layui-layout-admin" style="background: #1e67d0">
+        <div class="layui-container">
+            <div class="layui-row">
+                <div class="layui-col-xs5 layui-col-sm4 layui-col-md8">
+                    <span class="layui-breadcrumb" lay-separator=" ">
+                        <a href="" style="color: #ffffff !important;">设为首页</a>
+                        <a href="" style="color: #ffffff !important;">收藏网址</a>
+                    </span>
+                </div>
+                <!-- <div class="layui-col-xs1 layui-col-sm1 layui-col-md3">
+                            &nbsp;
+                        </div> -->
+                <div class="layui-col-xs3 layui-col-sm4 layui-col-md2">
+                    <span class="layui-breadcrumb" lay-separator="|">
+                        <a href="" style="color: #ffffff !important;">登录</a>
+                        <a href="" style="color: #ffffff !important;">注册</a>
+                    </span>
+                </div>
+                <div class="layui-col-xs4 layui-col-sm4 layui-col-md2">
+                    <span class="layui-breadcrumb" lay-separator=" " style="word-break:keep-all;white-space:nowrap;margin-top: -50px;text-align: center;">
+                        <a href="" style="color: #ffffff !important;">18770913123</a>
+                        <a href="" style="color: red !important;">登录状态</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="layui-header" style="background: rgba(242, 242, 242, 1);">
+            <div class="layui-row">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="margin:0;">
+                    <ul class="layui-tab-title" style="background: #fff">
+                        <li></li>
+                        <li>
+                            <a href="../index/">首页</a>
+                        </li>
+                        <li class="layui-this">查询</li>
+                        <li><a href="../fapiao/">发票</a> </li>
+                        <li>办税</li>
+
+                    </ul>
+                    <!-- <div class="layui-tab-content">1111111</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="display: inline-block;height: calc(100% - 60px);width: 100%; margin-left: 0;padding: 0;">
+        <div class="mycontent">
+            <div class="layui-container" style="background: #f1f3f5">
+                <p style="height: 30px;line-height: 30px"> 证明类</p>
+                <div class="layui-container" style="background: #ffffff;height: 150px;width: 100%;">
+                    <div class="layui-row" style="text-align: center;">
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/01.png" alt="">
+                            <p>纳税证明开具</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/02.png" alt="">
+                            <p>已认证增值税</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/03.png" alt="">
+                            <p>纳税证明真伪查询</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/04.png" alt="">
+                            <p>税务违法记录证明开具</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/05.png" alt="">
+                            <p>税务违法证明真伪查询</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/06.png" alt="">
+                            <p>丢失增值税专用发票已报销证明开具</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- //  second   -->
+                 <p style="height: 30px;line-height: 30px"> 查询类</p>
+                <div class="layui-container" style="background: #ffffff;height: 150px;width: 100%;">
+                    <div class="layui-row" style="text-align: center;">
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <a href="../taxinf/">
+                            <img src="/static/img/07.png" alt="">
+                            <p>纳税人档案查询</p></a>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/08.png" alt="">
+                            <p>一般纳税人资格查询</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/09.png" alt="">
+                            <p>纳税信息查询</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/10.png" alt="">
+                            <p>应税服务减除项目清单</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/11.png" alt="">
+                            <p>丢失被盗发票查询</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="layui-container">
+                <div class="layui-row">
+                    &nbsp;
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                        <img src="/static/img/000.png" alt="">
+                    </div>
+                    <div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
+                        <p class="row" style="color: #999;">深圳市国家税务局所有 备案号：粤ICP备06028206号-1</p>
+                        <p class="row" style="color: #999;">地址：深圳市福田沙嘴路38号国税大厦 邮政编码：518048 联系电话：12366-1</p>
+                        <p class="row" style="color: #999;">建议使用1280x768分辨率IE8以上浏览器浏览本站</p>
+                    </div>
+                    <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+                        <hr>
+                    </div>
+                    <div class="layui-col-xs6 layui-col-sm6 layui-col-md6" style="color: #999;">
+                        国家地税局版权所有COPYRIGHTS ALL RESERVERD @2018
+                    </div>
+                    <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+                        <img src="/static/img/222.png" alt="" style="width: 20px;height:20px">
+                        <img src="/static/img/111.png" alt="" style="width: 20px;height:20px">
+                        <img src="/static/img/333.png" alt="" style="width: 20px;height:20px">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="/static/js/layui.all.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function () {
+            var element = layui.element;
+
+        });
+    </script>
+</body>
+
+</html>

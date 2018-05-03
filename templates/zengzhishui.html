@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/static/css/layui.css"/>
+    <title></title>
+    <style>
+        input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+        }
+
+        table {
+            margin: 0px !important;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+<div class="layui-container">
+    <form class="layui-form layui-form-pane1" action="/zengzhishui/" method="post">
+        {% csrf_token %}
+        <h2 style="text-align: center;line-height: 60px;font-weight:bold;">增值税纳税申报表</h2>
+        <table class="layui-table" style="margin: 0;" align='center'>
+            <tr>
+                <td>法定代表人姓名</td>
+                <td>
+                    <input type="text" name="taxname" lay-verify="required|taxname" lay-verType="tips" required
+                           autocomplete="off"/>
+                </td>
+                <td>注册地址</td>
+                <td>
+                    <input type="text" name="regadress" lay-verify="required" lay-verType="tips" autocomplete="off"/>
+                </td>
+                <td>生产经营地址</td>
+                <td>
+                    <input type="text" name="bussadress"/>
+                </td>
+            </tr>
+            <tr>
+                <td>开户银行及账目</td>
+                <td>
+                    <input type="text"/>
+                </td>
+                <td>登记注册类型</td>
+                <td>
+                    <input type="text"/>
+                </td>
+                <td>电话号码</td>
+                <td>
+                    <input type="text" lay-verify="required|number" lay-verType="tips" autocomplete="off"/>
+                </td>
+            </tr>
+            <table class="layui-table" style="margin: 0;">
+                <tr>
+                    <td colspan='2' rowspan="2" style="width:289px;">项目</td>
+                    <td rowspan="2">栏次</td>
+                    <td colspan="2" style="width:70px;">一般项目</td>
+                    <td colspan="2">即征即退项目</td>
+
+                </tr>
+                <tr>
+                    <td>本月数</td>
+                    <td>本年累计</td>
+                    <td>本月数</td>
+                    <td>本年累计</td>
+
+                </tr>
+
+                <tr>
+                    <td rowspan="10" style="width:10px;">销售额</td>
+                    <td>(一)按试用税率计税销售额</td>
+                    <td style="width:123px;">1</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="width:258px;">其中：应税货物销售额</td>
+                    <td>2</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>应税劳务销售额</td>
+                    <td>3</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>纳税检查调整的销售额</td>
+                    <td>4</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>（二）按简单办法计税销售额</td>
+                    <td>5</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>其中：纳税检查调整的销售额</td>
+                    <td>6</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>（三）免、抵、退办法出口销售额</td>
+                    <td>7</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>（四）免税销售额</td>
+                    <td>8</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>其中：免税货物销售额</td>
+                    <td>9</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>免税劳务销售额</td>
+                    <td>10</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+            </table>
+            <table class="layui-table" style="margin: 0;">
+                <tr>
+                    <td rowspan="14" style="width:10px;">税款计算</td>
+                    <td>销项税额</td>
+                    <td style="width:123px;">11</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="width:258px;">进项税额</td>
+                    <td>12</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>上期留抵数额</td>
+                    <td>13</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>进项税额转出</td>
+                    <td>14</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>免、抵、退应退税额</td>
+                    <td>15</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>按适用税率计算的纳税检查应补缴税额</td>
+                    <td>16</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>应抵扣税额合计</td>
+                    <td>17=12+13-14-15+16</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>实际抵扣税额</td>
+                    <td>18(如17
+                        <11,则为17,否则为11)
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>应纳税额</td>
+                    <td>19=11-18</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>期末留抵税额</td>
+                    <td>20=17-18</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>简易计税办法计算的应纳税额</td>
+                    <td>21</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>按简易计税办法计算的应纳税税额</td>
+                    <td>22</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>应纳税额减征额</td>
+                    <td>23</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>应纳税额合计</td>
+                    <td>24=19+21-23</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+            </table>
+            <table class="layui-table" style="margin: 0;">
+                <tr>
+                    <td rowspan="14" style="width:10px;">税款缴纳</td>
+                    <td>期初未缴税额（多缴为负数）</td>
+                    <td style="width:123px;">25</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="width:258px;">实收出口开具专用缴款书退税额</td>
+                    <td>26</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>本期已缴税额</td>
+                    <td>27=28+29+30+31</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>①分次预缴税额</td>
+                    <td>28</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>②出口开具专用缴款书预缴税额</td>
+                    <td>29</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>③本期缴纳上期应纳税额</td>
+                    <td>30</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>④本期缴纳欠缴税额</td>
+                    <td>31</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>期末未缴税额（多缴为负数）</td>
+                    <td>32=24+25+26-27</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>□□□□□≥ 0</td>
+                    <td>33=25+26-27</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>本期应补（退）税额</td>
+                    <td>34=24-28-29</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>即征即退实际退税额</td>
+                    <td>35</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>期末未缴查税额</td>
+                    <td>36</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>本期入库查补税额</td>
+                    <td>37</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>期末未缴查补税额</td>
+                    <td>38=16+22+36-37</td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                    <td>
+                        <input type="text"/>
+                    </td>
+                </tr>
+
+                <table class="layui-table" style="margin-bottom: 20px!important;">
+                    <tr>
+                        <td>授权声明</td>
+                        <td>
+                            <p>如果你已委托代理人申报，请填写以下资料：</p>
+                            <div contenteditable="true">
+                                为代理一切税务事宜，请授权
+                                <input type="text" style="width:100px;"/>(地址)
+                                <input type="text" style="width:320px;"/> 为本纳税人的代理申报人，任何与本申报表有关的往来文件，都可寄予本人。
+                            </div>
+                            <div style="text-align: right;">
+                                授权人签字：
+                                <input type="text" style="width:100px;"/>
+                            </div>
+                        </td>
+                        <td>申报人声明</td>
+                        <td>
+                            本纳税申报表是根据国家税收法律法规及相关规定填报的，我确定他是真实的，可靠的，完整的。
+                        </td>
+                    </tr>
+                </table>
+            </table>
+        </table>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <a href="../yanzhm/" style="border: 1px solid #000; padding: 8px">扫二维码到手机填表</a>
+                <button class="layui-btn layui-btn-normal layui-layout-right" lay-submit lay-filter="*">立即提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/static/js/layui.all.js"></script>
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //自定义验证规则
+        form.verify({
+            taxname: function (value, item) { //value：表单的值、item：表单的DOM对象
+                if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+                    return '用户名不能有特殊字符';
+                }
+                if (/(^\_)|(\__)|(\_+$)/.test(value)) {
+                    return '用户名首尾不能出现下划线\'_\'';
+                }
+                if (/^\d+$/.test(value)) {
+                    return '用户名不为数字';
+                }},
+                pass: [/(.+){6,12}$/, '密码必须6到12位']
+            });
+
+
+    });
+</script>
+</body>
+
+</html>

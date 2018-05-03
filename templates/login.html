@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/layout.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mycontent {
+            height: auto;
+            min-height: 80%;
+            background: green;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        .footer {
+            height: 20%;
+            min-height: 140px;
+            background: #373d42;
+        }
+
+        .myfooter {
+            position: relative;
+            height: 120px;
+            /*line-height尽量不要超过height高度*/
+            line-height: 110px;
+            margin-top: -120px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+<!--导航栏部分-->
+<div class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background: white">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <div class="forimg">
+                        <img src="/static/img/logo.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <!-- <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#">电子税务局</a>
+                                </li>
+
+                            </ul> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-headphones"></i> 在线服务</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-arrows-alt"></i> 税务服务</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container"
+     style="display: inline-block;background: #333;height: calc(100% - 50px);width: 100%; margin-top: 50px; margin-left: 0;padding: 0;">
+    <div class="mycontent"
+         style="background:url(/static/img/beijing.png) no-repeat center center;background-size:cover;">
+        <div class="login">
+            <div style="color: #fff; font-size: 30px; word-break:keep-all;white-space:nowrap;margin-top: -50px;text-align: center;">
+                国地税联合办税系统
+            </div>
+            <h2>账号登录</h2>
+            <form action="/index/" class="loginContent">
+                <input type="text" placeholder="请输入纳税人识别号或社会信用代码">
+                <input type="password" placeholder="请输入密码">
+                <div class="validreg">
+                    <div id="validreg"><i class="fa fa-exclamation-circle"></i> {{info}}</div>
+                    <div style="width:300px;height: 120px;background: green;margin-top: -160px;display: none"
+                         id="forvalidimg">
+                        <img src="/static/img/yzm.jpg" alt="" id="monitor_map">
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"
+                               style="height:15px; vertical-align:bottom; margin-bottom:3px; margin-top:-1px;">同意
+                        《深圳市国家税务局电子税务局用户协议》
+                    </label>
+                </div>
+                <input type="submit" value="登录">
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-4 col-xs-3">
+                <div class="row">111</div>
+                <div class="row" style="text-align: right;">
+                    <img src="/static/img/000.png" alt="">
+                </div>
+                <div class="row">111</div>
+
+            </div>
+            <div class="col-md-1 col-xs-1"></div>
+            <div class="col-md-7 col-xs-8">
+                <div class="row">&nbsp</div>
+                <div class="row" style="color: #999;">深圳市国家税务局所有 备案号：粤ICP备06028206号-1</div>
+                <div class="row" style="color: #999;">地址：深圳市福田沙嘴路38号国税大厦 邮政编码：518048 联系电话：12366-1</div>
+                <div class="row" style="color: #999;">建议使用1280x768分辨率IE8以上浏览器浏览本站</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-3" style="height: 10px;">&nbsp;</div>
+            <div class="col-md-8 col-xs-6">
+                <hr style="color: #d8d8d8;margin: 5px;">
+            </div>
+            <div class="col-md-2 col-xs-3" style="height: 10px;">&nbsp;</div>
+        </div>
+        <div class="col-md-6 col-xs-6" style="text-align: center;color: #999;text-align: right;">国家地税局版权所有COPYRIGHTS ALL
+            RESERVERD @2018
+        </div>
+        <div class="col-md-6 col-xs-6" style="text-align: center;margin: 0;">
+            <img src="/static/img/222.png" alt="" style="width: 20px;height:20px">
+            <img src="/static/img/111.png" alt="" style="width: 20px;height:20px">
+            <img src="/static/img/333.png" alt="" style="width: 20px;height:20px">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var oValid = document.getElementById("validreg");
+    var oValimg = document.getElementById("forvalidimg");
+    var oImgclick = document.getElementById("monitor_map");
+
+    function mapOnClick(e) {
+        e = e || window.event;
+        var imgId = '#' + $(e.target).attr('id');
+        var currentWidth = $(imgId).width();
+        var currentHeight = $(imgId).height();
+        var offsetX = e.pageX - $(imgId).offset().left;
+        var offsetY = e.pageY - $(imgId).offset().top;
+        var x = offsetX / currentWidth;
+        var y = offsetY / currentHeight;
+        var xpx = parseInt(x * 300);
+        var ypx = parseInt(y * 120);
+        return ("(" + xpx + "," + ypx + ")")
+    }
+
+    a = []
+    for(var i=0;i<3;i++){
+        oImgclick.onclick=function(){
+             console.log(i)
+        }
+
+    }
+    oImgclick.onclick = function () {
+        console.log(mapOnClick());
+    }
+    console.log(a)
+    // if (a.length == 3) {
+    //     console.log("kkk")
+    // }
+    oValid.onclick = function () {
+        if (oValimg.style.display == "none") {
+            oValimg.style.display = "block"
+        } else {
+            oValimg.style.display = "none"
+        }
+
+    }
+
+</script>
+</html>
