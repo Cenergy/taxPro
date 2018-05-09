@@ -66,11 +66,6 @@ def taxinf(request):
 	autoslide = InputDataClass('you', driver1)
 	info_data_gs=getData.get_data_gs(autoslide)
 	info_data_ds = getData.get_data_ds(autoslide)
-
-
-	# info_data_ds = getData.get_data_ds(autoslide)
-	gs = json.dumps(info_data_gs)
-	# ds = json.dumps(info_data_ds)
 	return render(request, 'taxinf.html', locals())
 def zengzhishui(request):
 	if request.method == "POST":

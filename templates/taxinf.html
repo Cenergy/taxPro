@@ -18,11 +18,11 @@
     <table class="table table-bordered" style="margin:0;">
         <tr>
             <td colspan="6">
-                <h2 style="text-align: center;">纳税人信息{{ gs }}</h2>
+                <h2 style="text-align: center;">纳税人信息</h2>
             </td>
         </tr>
         <tr>
-            <td>纳税人名称{{ ds }}</td>
+            <td>纳税人名称</td>
             <td><input type="text" id="taxname"/></td>
             <td>纳税人识别号</td>
             <td><input type="text" id="taxnum"/></td>
@@ -117,74 +117,52 @@
 </body>
 </html>
 <script>
-    // window.onload=function(){
-    // var aa = window.location.href
-    // var bb = aa.split("?")[1]
-    // var obj = encodeURI(bb)
-    //
-    // function getUrlVars() {
-    //     var vars = [], hash;
-    //     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    //     for (var i = 0; i < hashes.length; i++) {
-    //         hash = hashes[i].split('=');
-    //         vars.push(hash[0]);
-    //         vars[hash[0]] = hash[1];
-    //     }
-    //     return vars;
-    // }
-    //
-    // var params = getUrlVars()
     //获得分类的名称
     {#info_data_gs = {'法定代表人': '李某某', '是否一般纳税人': '否', '税源管理责任人': '前海国税局税源管理二科', '纳税信用等级': '',#}
-		{#			'身份证件号码': '445281****03137015', '行业': '其他未列明专业技术服务业', '纳税人状态': '正常', '身份证件名称': '居民身份证',#}
-		{#			'生产经营地址': '深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）', '是否出口退税企业': '否',#}
-		{#			'生产经营范围': '人工智能软硬件的技术开发、技术咨询、技术转让与技术服务；教育信息咨询、投资咨询（以上均不含限制项目）；投资兴办实业（具体项目另行申报）；创业投资业务。（以上各项涉及法律、行政法规、国务院决定禁止的项目除外，限制的项目须取得许可后方可经营）^',#}
-		{#			'纳税人识别号': '91440300MA5ETEN28T', '组织机构代码': 'MA5ETEN28', '纳税人名称': '深圳人工智能科技有限公司',#}
-		{#			'税务机关': '深圳市前海国家税务局'}#}
-	{#info_data_ds = {'法人代表': ' 李某某', '主管税务机关': ' 深圳市前海地方税务局办税服务科', '核算方式': ' 独立核算自负盈亏', '登记注册类型': ' 其他有限责任公司',#}
-	{#				'街道乡镇': ' 粤海街道', '业务受理点': ' 深圳市前海地方税务局办税服务科', '财务负责人': ' 陈某某', '开业设立日期': ' 2017-10-27',#}
-	{#				'纳税人状态': ' 正常', '统一社会信用代码': ' 91440300MA5ETEN28T',#}
-	{#				'注册地址': ' 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）', '国地共管户标志': ' 国地共管', '办税人员': ' 李某某',#}
-	{#				'生产经营地址': ' 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）', '税务登记表类型': ' 单位纳税人税务登记',#}
-	{#				'经营期限起': ' 2017-10-27', '手机/联系电话': ' 13751100043', '纳税人识别号': ' 91440300MA5ETEN28T',#}
-	{#				'纳税人名称': ' 深圳人工智能科技有限公司'}#}
-    var gsdata = {{ gs|safe }}
-    var gsdatainf = decodeURI(gsdata);
-    console.log(gsdata)
-    console.log(gsdatainf)
-    var dsdata = {{ info_data_ds }}
-    var dsdatainf = decodeURI(dsdata);
-    var gsjson = info_data_gs
-    var dsjson = info_data_ds
-    var gsjson = JSON.parse(info_data_gs)
-    var dsjson = JSON.parse(info_data_ds)
-        document.getElementById("taxname").value = gsjson["纳税人名称"]
-         document.getElementById("taxnum").value = gsjson["纳税人识别号"]
-        document.getElementById("taxpay").value = gsjson["法定代表人"]
-        document.getElementById("idnum").value = gsjson["身份证件号码"]
-        document.getElementById("idtype").value = gsjson["身份证件名称"]
-        document.getElementById("address").value = gsjson["生产经营地址"]
-        document.getElementById("regaddress").value = dsjson["注册地址"]
-        document.getElementById("businessscope").value = gsjson["生产经营范围"]
-        document.getElementById("dateofest").value = dsjson["开业设立日期"]
-        document.getElementById("termofoperation").value = dsjson["经营期限起"]
-        document.getElementById("landmanagementsystem").value = dsjson["国地共管户标志"]
-        document.getElementById("isexporttax").value = gsjson["是否出口退税企业"]
-        document.getElementById("orgcode").value = gsjson["组织机构代码"]
-        document.getElementById("industry").value = gsjson["行业"]
-        document.getElementById("socialcredit").value = dsjson["统一社会信用代码"]
-        document.getElementById("responsibleperson").value = gsjson["税源管理责任人"]
-        document.getElementById("istaxpay").value = gsjson["是否一般纳税人"]
-        document.getElementById("financialofficer").value = dsjson["财务负责人"]
-        document.getElementById("taxofficers").value = dsjson["办税人员"]
-         document.getElementById("typeofreg").value = dsjson["登记注册类型"]
-        document.getElementById("typeofregform").value = dsjson["税务登记表类型"]
-        document.getElementById("accounting").value = dsjson["核算方式"]
-        document.getElementById("taxpayerstatus").value = dsjson["纳税人状态"]
-        document.getElementById("competenttax").value = dsjson["主管税务机关"]
-        document.getElementById("businessaccept").value = dsjson["业务受理点"]
-        document.getElementById("taxlevel").value = gsjson["纳税信用等级"]
-    // }
+    {#			'身份证件号码': '445281****03137015', '行业': '其他未列明专业技术服务业', '纳税人状态': '正常', '身份证件名称': '居民身份证',#}
+    {#			'生产经营地址': '深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）', '是否出口退税企业': '否',#}
+    {#			'生产经营范围': '人工智能软硬件的技术开发、技术咨询、技术转让与技术服务；教育信息咨询、投资咨询（以上均不含限制项目）；投资兴办实业（具体项目另行申报）；创业投资业务。（以上各项涉及法律、行政法规、国务院决定禁止的项目除外，限制的项目须取得许可后方可经营）^',#}
+    {#			'纳税人识别号': '91440300MA5ETEN28T', '组织机构代码': 'MA5ETEN28', '纳税人名称': '深圳人工智能科技有限公司',#}
+    {#			'税务机关': '深圳市前海国家税务局'}#}
+    {#info_data_ds = {'法人代表': ' 李某某', '主管税务机关': ' 深圳市前海地方税务局办税服务科', '核算方式': ' 独立核算自负盈亏', '登记注册类型': ' 其他有限责任公司',#}
+    {#				'街道乡镇': ' 粤海街道', '业务受理点': ' 深圳市前海地方税务局办税服务科', '财务负责人': ' 陈某某', '开业设立日期': ' 2017-10-27',#}
+    {#				'纳税人状态': ' 正常', '统一社会信用代码': ' 91440300MA5ETEN28T',#}
+    {#				'注册地址': ' 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）', '国地共管户标志': ' 国地共管', '办税人员': ' 李某某',#}
+    {#				'生产经营地址': ' 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）', '税务登记表类型': ' 单位纳税人税务登记',#}
+    {#				'经营期限起': ' 2017-10-27', '手机/联系电话': ' 13751100043', '纳税人识别号': ' 91440300MA5ETEN28T',#}
+    {#				'纳税人名称': ' 深圳人工智能科技有限公司'}#}
+    var gsdata = "{{ info_data_gs|safe}}"
+    var aa = gsdata.replace(/'/ig, '"')
+    var gsjson = JSON.parse(aa)
+    var dsdata = "{{ info_data_ds|safe}}"
+    var dd = dsdata.replace(/'/ig, '"')
+    var dsjson = JSON.parse(dd)
+    document.getElementById("taxname").value = gsjson["纳税人名称"]
+    document.getElementById("taxnum").value = gsjson["纳税人识别号"]
+    document.getElementById("taxpay").value = gsjson["法定代表人"]
+    document.getElementById("idnum").value = gsjson["身份证件号码"]
+    document.getElementById("idtype").value = gsjson["身份证件名称"]
+    document.getElementById("address").value = gsjson["生产经营地址"]
+    document.getElementById("regaddress").value = dsjson["注册地址"]
+    document.getElementById("businessscope").value = gsjson["生产经营范围"]
+    document.getElementById("dateofest").value = dsjson["开业设立日期"]
+    document.getElementById("termofoperation").value = dsjson["经营期限起"]
+    document.getElementById("landmanagementsystem").value = dsjson["国地共管户标志"]
+    document.getElementById("isexporttax").value = gsjson["是否出口退税企业"]
+    document.getElementById("orgcode").value = gsjson["组织机构代码"]
+    document.getElementById("industry").value = gsjson["行业"]
+    document.getElementById("socialcredit").value = dsjson["统一社会信用代码"]
+    document.getElementById("responsibleperson").value = gsjson["税源管理责任人"]
+    document.getElementById("istaxpay").value = gsjson["是否一般纳税人"]
+    document.getElementById("financialofficer").value = dsjson["财务负责人"]
+    document.getElementById("taxofficers").value = dsjson["办税人员"]
+    document.getElementById("typeofreg").value = dsjson["登记注册类型"]
+    document.getElementById("typeofregform").value = dsjson["税务登记表类型"]
+    document.getElementById("accounting").value = dsjson["核算方式"]
+    document.getElementById("taxpayerstatus").value = dsjson["纳税人状态"]
+    document.getElementById("competenttax").value = dsjson["主管税务机关"]
+    document.getElementById("businessaccept").value = dsjson["业务受理点"]
+    document.getElementById("taxlevel").value = gsjson["纳税信用等级"]
 </script>
 </body>
 </html>
