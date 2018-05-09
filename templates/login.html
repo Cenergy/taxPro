@@ -102,11 +102,12 @@
                 国地税联合办税系统
             </div>
             <h2>账号登录</h2>
-            <form action="/index/" class="loginContent">
-                <input type="text" placeholder="请输入纳税人识别号或社会信用代码">
-                <input type="password" placeholder="请输入密码">
+            <form action=" " class="loginContent" id="loginContent" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="请输入纳税人识别号或社会信用代码" name="username">
+                <input type="password" placeholder="请输入密码" name="password">
                 <div class="validreg">
-                    <div id="validreg"><i class="fa fa-exclamation-circle"></i> {{info}}</div>
+                    <div id="validreg"><i class="fa fa-exclamation-circle"></i> {{ info }}</div>
                     <div style="width:300px;height: 120px;background: green;margin-top: -160px;display: none"
                          id="forvalidimg">
                         <img src="/static/img/yzm.jpg" alt="" id="monitor_map">
@@ -115,11 +116,11 @@
                 <div class="checkbox">
                     <label>
                         <input type="checkbox"
-                               style="height:15px; vertical-align:bottom; margin-bottom:3px; margin-top:-1px;">同意
+                               style="height:15px;width: 20px; vertical-align:bottom; margin-bottom:3px; margin-top:-1px;">同意
                         《深圳市国家税务局电子税务局用户协议》
                     </label>
                 </div>
-                <input type="submit" value="登录">
+                <input type="submit" value="登录" id="mysubmit">
             </form>
         </div>
     </div>
@@ -163,6 +164,7 @@
     var oValid = document.getElementById("validreg");
     var oValimg = document.getElementById("forvalidimg");
     var oImgclick = document.getElementById("monitor_map");
+    var oBtn = document.getElementById("mysubmit");
 
     function mapOnClick(e) {
         e = e || window.event;
@@ -178,27 +180,41 @@
         return ("(" + xpx + "," + ypx + ")")
     }
 
+    var clickNum = 0;
     a = []
-    for(var i=0;i<3;i++){
-        oImgclick.onclick=function(){
-             console.log(i)
+    var bbb;
+    var timeset = setInterval(function () {
+        oImgclick.onclick = function () {
+            clickNum++;
+            a[clickNum] = mapOnClick()
+            if (clickNum == 3) {
+                oValimg.style.display = "none";
+                bbb = a
+                clickNum = 0
+            }
+
+            oBtn.onclick = function () {
+                var ccc="/index?"+bbb;
+                {#console.log("bbb")#}
+                {#alert("kkkk")#}
+                $('form[id=loginContent]').attr('action',ccc);
+            }
+        }
+    }, 1000)
+    if (clickNum == 3) {
+        if (oValimg.style.display == "none") {
+            clearInterval(timeset)
         }
 
     }
-    oImgclick.onclick = function () {
-        console.log(mapOnClick());
-    }
-    console.log(a)
-    // if (a.length == 3) {
-    //     console.log("kkk")
-    // }
+
+
     oValid.onclick = function () {
         if (oValimg.style.display == "none") {
             oValimg.style.display = "block";
         } else {
             oValimg.style.display = "none";
         }
-
     }
 
 </script>

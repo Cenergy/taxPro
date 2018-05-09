@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <link rel="stylesheet" href="/static/css/global.css">
+    <style>
+        .layui-nav .layui-this:after,
+        .layui-nav-bar,
+        .layui-nav-tree .layui-nav-itemed:after {
+            background-color: blue;
+        }
+        .layui-tab-brief>.layui-tab-more li.layui-this:after,
+        .layui-tab-brief>.layui-tab-title .layui-this:after {
+            border-bottom: 1px solid blue;
+        }
+        a:hover{
+            color: #1b6d85;
+        }
+    </style>
+</head>
+
+<body class="layui-layout-body" style="margin-top: 0px">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-container" style="background: #1e67d0;margin: 0px; width: 100% !important;">
+            <div class="layui-row">
+                <div class="layui-container">
+                <div class="layui-col-xs5 layui-col-sm4 layui-col-md8">
+                    <span class="layui-breadcrumb" lay-separator=" ">
+                        <a href="" style="color: #ffffff !important;">设为首页</a>
+                        <a href="" style="color: #ffffff !important;">收藏网址</a>
+                    </span>
+                </div>
+                <!-- <div class="layui-col-xs1 layui-col-sm1 layui-col-md3">
+                            &nbsp;
+                        </div> -->
+                <div class="layui-col-xs3 layui-col-sm4 layui-col-md2">
+                    <span class="layui-breadcrumb" lay-separator="|">
+                        <a href="" style="color: #ffffff !important;">登录</a>
+                        <a href="" style="color: #ffffff !important;">注册</a>
+                    </span>
+                </div>
+                <div class="layui-col-xs4 layui-col-sm4 layui-col-md2">
+                    <span class="layui-breadcrumb" lay-separator=" " style="word-break:keep-all;white-space:nowrap;margin-top: -50px;text-align: center;">
+                        <a href="" style="color: #ffffff !important;">18770913123</a>
+                        <a href="" style="color: red !important;">登录状态</a>
+                    </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="layui-header" style="background: rgba(242, 242, 242, 1);">
+            <div class="layui-row">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="margin:0;">
+                    <ul class="layui-tab-title" style="background: #ffffff">
+
+                        <li>&nbsp;&nbsp;&nbsp;</li>
+                        <img src="/static/img/logo.png" alt="" height="30">
+                        <li ><a href="/index/">首页</a></li>
+                        <li ><a href="/chaxun/">查询</a> </li>
+                        <li><a href="/fapiao/">发票</a></li>
+                        <li class="layui-this"><a href="#">办税</a></li>
+                        <!--
+                            <form class="layui-form " ation="">
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+
+                                            <input type="text" class="layui-input" style="height:20px" placeholder="请输入要搜索的内容">
+                                            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm">搜索</button>
+
+                                    </div>
+                                </div>
+                            </form>
+                        -->
+                    </ul>
+                    <!-- <div class="layui-tab-content">1111111</div> -->
+                </div>
+                <!--
+                <form class="layui-form " ation="">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                    <input type="text" class="layui-input" style="height:20px" placeholder="请输入要搜索的内容">
+                                    <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm">搜索</button>
+
+                            </div>
+                        </div>
+                 </form>
+                -->
+            </div>
+        </div>
+        <div class="layui-body" style="left: 0px;bottom: 0px;top: 80px">
+            <div class="fly-main" style="overflow: hidden;">
+                <p style="height: 30px;line-height: 30px">登记／报告类</p>
+                        <div class="layui-container " style="background: #ffffff;padding-bottom: 20px;width: 100%;text-align: center;">
+                            <div class="layui-row">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 layui-btn-disabled">
+                                    <img src="/static/img/30.png" alt="">
+                                    <p>税种启用</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 layui-btn-disabled">
+                                    <img src="/static/img/31.png" alt="">
+                                    <p>变更税务登记</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 layui-btn-disabled">
+                                    <img src="/static/img/32.png" alt="">
+                                    <p>增值税一般纳税人登记</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2" style="border: 1px solid blue">
+                                    <a href="/table_somename/">
+                                    <img src="/static/img/33.png" alt="">
+                                    <p>注销税务登记</p></a>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 layui-btn-disabled">
+                                    <img src="/static/img/34.png" alt="">
+                                    <p>扣款税款登记</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row layui-btn-disabled">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/35.png" alt="">
+                                    <p>税务行政许可申请</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/36.png" alt="">
+                                    <p>纳税信用补评</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/37.png" alt="">
+                                    <p>纳税信用复评</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/38.png" alt="">
+                                    <p>跨区域涉税事项报告</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/39.png" alt="">
+                                    <p>经营地涉税事项反馈</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row layui-btn-disabled">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/40.png" alt="">
+                                    <p>存款账户账号报告</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/41.png" alt="">
+                                    <p>欠税人处置不动产或大额资产报告</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/42.png" alt="">
+                                    <p>财务会计制度及核算软件备案报告</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/43.png" alt="">
+                                    <p>增值税一般纳税人选择简易办法计算缴纳增值税备案</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/44.png" alt="">
+                                    <p>纳税人合并（分立）情况报告</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row layui-btn-disabled">
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/45.png" alt="">
+                                <p>停业登记</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/46.png" alt="">
+                                <p>复业登记</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/47.png" alt="">
+                                <p>实名身份信息采集</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/48.png" alt="">
+                                <p>企业年度关联业务往来报告</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/49.png" alt="">
+                                <p>外出经营证明核销</p>
+                            </div>
+                           <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                        </div>
+                        </div>
+                        <p style="height: 30px;line-height: 30px">申报类</p>
+                        <div class="layui-container layui-btn-disabled" style="background: #ffffff;padding-bottom: 20px;width: 100%;text-align: center;">
+                            <div class="layui-row">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 ">
+                                    <img src="/static/img/50.png" alt="">
+                                    <p>增值税小规模纳税人（非定期定额户）申报</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/51.png" alt="">
+                                    <p>税务行政许可申请</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/52.png" alt="">
+                                    <p>定期定额个体工商户增值税申报</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/53.png" alt="">
+                                    <p>定期定额个体工商户消费税申报</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/54.png" alt="">
+                                    <p>增值税小规模纳税人更正申报</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/55.png" alt="">
+                                    <p>增值税纳税申报（一般纳税人适用）</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/56.png" alt="">
+                                    <p>居民企业所得税月（季）度预缴纳税申报（适用查账征收）</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/57.png" alt="">
+                                    <p>居民企业所得税月（季）度预缴纳税申报（适用查账征收）</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/58.png" alt="">
+                                    <p>居民企业所得税年度纳税更正申报（适用查账征收）</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/59.png" alt="">
+                                    <p>居民企业所得税月（季）度预缴纳税申报（适用核定征收）</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/60.png" alt="">
+                                    <p>居民企业所得税年度纳税申报（适用核定征收）</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/61.png" alt="">
+                                    <p>居民企业清算企业所得税申报</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/62.png" alt="">
+                                    <p>非居民企业所得税季度纳税申报（适用核定征收）及不构成常设机构和国际运输免税申报</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/63.png" alt="">
+                                    <p>非居民企业所得税年度纳税申报（适用核定征收）及不构成常设机构和国际运输免税申报</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/64.png" alt="">
+                                    <p>非居民企业所得税季度纳税申报（适用据实申报）</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row">
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/65.png" alt="">
+                                <p>非居民企业所得税年度申报（据实申报）</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/66.png" alt="">
+                                <p>期末留抵税额抵减增值税欠税申请</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/67.png" alt="">
+                                <p>营改增税负分析测算</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/68.png" alt="">
+                                <p>本期抵扣进项税额申报</p>
+                            </div>
+                            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                <img src="/static/img/69.png" alt="">
+                                <p>税收调查网上直报</p>
+                            </div>
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                        </div>
+                        <div class="layui-row">
+                            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/70.png" alt="">
+                            <p>重点税源网上直报</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/71.png" alt="">
+                            <p>委托代征申报（提供了专业市场金融企业两类委托代征全程网上办税）</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/72.png" alt="">
+                            <p>分支机构企业所得税年度纳税申报</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/73.png" alt="">
+                            <p>文化事业建设费申报</p>
+                        </div>
+                        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                            <img src="/static/img/74.png" alt="">
+                            <p>教育费附加和地方教育附加申报</p>
+                        </div>
+                        <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                    <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                        <img src="/static/img/75.png" alt="">
+                        <p>城市维护建设税申报</p>
+                    </div>
+                    <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                        <img src="/static/img/76.png" alt="">
+                        <p>印花税纳税申报</p>
+                    </div>
+                    <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                        <img src="/static/img/77.png" alt="">
+                        <p>电池消费税申报</p>
+                    </div>
+                    <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                        <img src="/static/img/78.png" alt="">
+                        <p>涂料消费税纳税申报</p>
+                    </div>
+                    <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                        <img src="/static/img/79.png" alt="">
+                        <p>酒类应税消费品消费税申报</p>
+                    </div>
+                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                    <img src="/static/img/80.png" alt="">
+                    <p>烟类应税消费品消费税申报</p>
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                    <img src="/static/img/81.png" alt="">
+                    <p>车辆购置税申报</p>
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                    <img src="/static/img/82.png" alt="">
+                    <p>小汽车消费税申报</p>
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                    <img src="/static/img/83.png" alt="">
+                    <p>成品油消费税申报</p>
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                    <img src="/static/img/84.png" alt="">
+                    <p>其他应税消费品消费税纳税申报</p>
+                </div>
+                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/85.png" alt="">
+                <p>定期定额个体工商户分月汇总申报</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/86.png" alt="">
+                <p>废弃电器电子产品处理基金申报</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/87.png" alt="">
+                <p>居民企业清算所得税申报</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/88.png" alt="">
+                <p>财务会计报告报送</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/89.png" alt="">
+                <p>企业集团合并财务报表-年报</p>
+            </div>
+            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+             </div>
+            <div class="layui-row">
+                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/90.png" alt="">
+                <p>出口退（免）税预申报</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/91.png" alt="">
+                <p>关联申报</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/92.png" alt="">
+                <p>储蓄存款利息所得扣缴个人所得税报告</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/93.png" alt="">
+                <p>扣缴非居民企业所得税申报</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/94.png" alt="">
+                <p>股权激励或以技术成果投资入股递延纳税报告</p>
+            </div>
+            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            </div>
+
+            <div class="layui-row">
+                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/95.png" alt="">
+                <p>代扣代缴、代收代缴报告</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/96.png" alt="">
+                <p>中华人民共和国扣缴企业所得税报告</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/97.png" alt="">
+                <p>多元化缴税</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/98.png" alt="">
+                <p>开具电子缴（退）款凭证</p>
+            </div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/99.png" alt="">
+                <p>首违不罚</p>
+            </div>
+            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                <img src="/static/img/100.png" alt="">
+                <p>简易处罚</p>
+            </div>
+            <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+            </div>
+                     </div>
+                        <p style="height: 30px;line-height: 30px">备案类</p>
+                        <div class="layui-container layui-btn-disabled" style="background: #ffffff;padding-bottom: 20px;width: 100%;text-align: center;">
+                            <div class="layui-row">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/101.png" alt="">
+                                    <p>增值税优惠备案</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/102.png" alt="">
+                                    <p>服务贸易支付税务备案</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/103.png" alt="">
+                                    <p>境内机构和个人发包作业或劳务备案</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/104.png" alt="">
+                                    <p>扣缴企业所得税合同备案</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/105.png" alt="">
+                                    <p>出口退（免）税备案</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                            <div class="layui-row">
+                                    <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/106.png" alt="">
+                                    <p>出口企业申请出口退税提醒服务</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/107.png" alt="">
+                                    <p>企业所得税优惠备案</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/108.png" alt="">
+                                    <p>税务资格备案（增值税即征即退资格）</p>
+                                </div>
+                                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+                                    <img src="/static/img/109.png" alt="">
+                                    <p>消费税优惠备案</p>
+                                </div>
+                                <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">&nbsp;</div>
+                            </div>
+                        </div>
+
+
+            </div>
+
+
+            <div class="fly-footer" style="background: #393D49">
+                <div class="layui-container">
+                    <div class="layui-row">
+                        <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                            <img src="/static/img/000.png" alt="">
+                        </div>
+                        <div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
+                            <p class="row" style="color: #999;">深圳市国家税务局所有 备案号：粤ICP备06028206号-1</p>
+                            <p class="row" style="color: #999;">地址：深圳市福田沙嘴路38号国税大厦 邮政编码：518048 联系电话：12366-1</p>
+                            <p class="row" style="color: #999;">建议使用1280x768分辨率IE8以上浏览器浏览本站</p>
+                        </div>
+                        <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+                            <hr>
+                        </div>
+                        <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+                            国家地税局版权所有COPYRIGHTS ALL RESERVERD @2018
+                        </div>
+                        <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+                            <img src="/static/img/222.png" alt="" style="width: 20px;height:20px">
+                            <img src="/static/img/111.png" alt="" style="width: 20px;height:20px">
+                            <img src="/static/img/333.png" alt="" style="width: 20px;height:20px">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/layui.all.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function () {
+            var element = layui.element;
+
+        });
+    </script>
+</body>
+
+</html>

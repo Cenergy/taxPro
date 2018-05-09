@@ -1,3 +1,4 @@
+
 """
 Django settings for taxPro project.
 
@@ -24,7 +25,7 @@ SECRET_KEY = 's4-=snny*jz@*#g7xfmxl#l&@mi8)&93k-rsuv1mi-iz9cln=_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 # Application definition
 
@@ -114,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'zh_Hans'
+# LANGUAGE_CODE = 'zh_Hans'
 
 TIME_ZONE = 'UTC'
 

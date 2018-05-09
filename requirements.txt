@@ -13,20 +13,8 @@
 # taxPro/wsgi.py: 12
 Django == 1.11.8
 
-# taxApp/getdata/reginf.py: 8
-Pillow == 5.0.0
-
 # taxPro/__init__.py: 1
 PyMySQL == 0.8.0
-
-# taxApp/getdata/reginf.py: 5
-matplotlib == 2.1.2
-
-# taxApp/getdata/reginf.py: 7
-numpy == 1.14.0
-
-# taxApp/getdata/reginf.py: 9
-requests == 2.18.4
 
 # taxApp/getdata/reginf.py: 1,2,3,4
 selenium == 3.11.0
