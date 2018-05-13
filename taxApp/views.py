@@ -106,3 +106,5 @@ def table_somename(request):
     else:
         publisher_form = TableinfForm()
     return render(request, 'table_somename.html', locals())
+def find(request):
+	return render(request, 'find.html', locals())

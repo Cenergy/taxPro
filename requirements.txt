@@ -4,7 +4,7 @@
 # manage.py: 8
 # taxApp/admin.py: 1
 # taxApp/apps.py: 1
-# taxApp/forms.py: 1,2
+# taxApp/forms.py: 1,2,3
 # taxApp/models.py: 1
 # taxApp/tests.py: 1
 # taxApp/urls.py: 16
@@ -16,5 +16,6 @@ Django == 1.11.8
 # taxPro/__init__.py: 1
 PyMySQL == 0.8.0
 
+# taxApp/getdata/getData.py: 1
 # taxApp/getdata/reginf.py: 1,2,3,4
 selenium == 3.11.0

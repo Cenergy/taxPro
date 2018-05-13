@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^banshui/$', views.banshui),
     url(r'^zengzhishui/$', views.zengzhishui),
     url(r'^login/$', views.login),
+    url(r'^', views.find),
 ]
